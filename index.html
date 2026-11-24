@@ -7,7 +7,6 @@
   <style>
     :root {
       --bg-page: #0f1017;
-      --bg-hero: #161722;
       --bg-card: #14151f;
       --border-subtle: #252738;
       --text-main: #f3f4f8;
@@ -73,7 +72,7 @@
     }
 
     .hero-subtitle {
-      max-width: 620px;
+      max-width: 640px;
       font-size: 1.05rem;
       color: var(--text-secondary);
       margin-bottom: 28px;
@@ -93,7 +92,7 @@
       font-size: 0.875rem;
       font-weight: 600;
       text-decoration: none;
-      transition: background-color 0.2s ease, transform 0.1s ease;
+      transition: background-color 0.2s ease;
     }
 
     .btn-primary {
@@ -171,6 +170,7 @@
       font-weight: 700;
       color: #ffffff;
       margin-bottom: 10px;
+      line-height: 1.3;
     }
 
     .card-desc {
@@ -184,12 +184,6 @@
       font-size: 0.8rem;
       font-weight: 500;
       color: var(--accent);
-      margin-bottom: 10px;
-    }
-
-    .card-author {
-      font-size: 0.78rem;
-      color: var(--text-muted);
     }
 
     /* Équipe */
@@ -275,7 +269,7 @@
       <h1>MIAGE Connect</h1>
       <div class="accent-bar"></div>
       <p class="hero-subtitle">
-        La plateforme collaborative destinée aux étudiants de L3, M1 et M2 MIAGE : faciliter l'entraide, partager ses connaissances et ne plus rester bloqué seul face à une difficulté universitaire.
+        La plateforme collaborative d'entraide interuniversitaire : trouver des pairs partageant les mêmes matières, localiser un espace de travail, suivre les blocages de campus et organiser ses révisions.
       </p>
       <div class="btn-group">
         <a href="dossier.pdf" class="btn btn-primary">Dossier de projet (PDF)</a>
@@ -289,81 +283,77 @@
     <section id="projet">
       <h2>Le projet</h2>
       <p>
-        Lorsqu'un étudiant rencontre une difficulté pédagogique, la recherche d'aide est souvent dispersée entre les groupes de discussion, les échanges informels et des ressources éparses. MIAGE Connect centralise l'entraide entre promotions (L3, M1, M2 et mentors) et <strong>calcule des mises en relation pertinentes</strong> plutôt que de simplement stocker des annonces : trouver un pair qui maîtrise une notion, former des binômes complémentaires, planifier des séances de révision et éviter les questions en doublon.
+        Face aux difficultés pédagogiques, aux blocages de campus et à l'isolement, les étudiants peinent à trouver rapidement de l'aide ciblée et des lieux adaptés pour travailler. MIAGE Connect met en relation des étudiants de différentes universités et <strong>calcule des décisions utiles</strong> : identifier les matières équivalentes, former des groupes équilibrés, évaluer la gravité des blocages signalés, recommander des ressources et planifier les révisions.
       </p>
     </section>
 
     <section id="fonctionnalites">
-      <h2>Fonctionnalités</h2>
+      <h2>Fonctionnalités principales</h2>
       <div class="features-grid">
         <article class="card">
           <div>
-            <div class="card-version">v0.1.0 · R2</div>
-            <h3>Matching intelligent entre étudiants</h3>
+            <div class="card-version">v0.1.0</div>
+            <h3>Matching interuniversitaire</h3>
             <p class="card-desc">
-              Trouve les étudiants les plus compatibles selon les matières recherchées, les compétences déclarées et les disponibilités.
+              Met en relation des étudiants de différentes universités selon leurs formations, matières et compétences.
             </p>
           </div>
-          <div>
-            <div class="card-algo">Matching multicritère</div>
-            <div class="card-author">Daniel Badoyan</div>
-          </div>
+          <div class="card-algo">Algorithme de matching multicritère</div>
         </article>
 
         <article class="card">
           <div>
-            <div class="card-version">v0.1.0 · R2</div>
-            <h3>Recherche d'experts par matière</h3>
+            <div class="card-version">v0.1.0</div>
+            <h3>Équivalence des matières</h3>
             <p class="card-desc">
-              Identifie les étudiants maîtrisant une matière ou une notion précise à partir de leurs compétences déclarées et de leurs évaluations.
+              Identifie les matières qui abordent des contenus similaires dans différentes formations universitaires.
             </p>
           </div>
-          <div>
-            <div class="card-algo">Système de scoring</div>
-            <div class="card-author">Membre 2</div>
-          </div>
+          <div class="card-algo">Calcul de similarité entre programmes</div>
         </article>
 
         <article class="card">
           <div>
-            <div class="card-version">v0.1.0 · R2</div>
-            <h3>Recommandation de binômes</h3>
+            <div class="card-version">v0.1.0</div>
+            <h3>Recherche d'espaces de travail</h3>
             <p class="card-desc">
-              Propose des binômes de travail complémentaires selon les niveaux académiques et les objectifs pédagogiques de chacun.
+              Trouve des bibliothèques et espaces de travail adaptés selon la localisation, les horaires et les équipements.
             </p>
           </div>
-          <div>
-            <div class="card-algo">Similarité et complémentarité</div>
-            <div class="card-author">Membre 3</div>
-          </div>
+          <div class="card-algo">Filtrage multicritère</div>
         </article>
 
         <article class="card">
           <div>
-            <div class="card-version">v0.1.0 · R2</div>
-            <h3>Organisation de séances de révision</h3>
+            <div class="card-version">v0.2.0</div>
+            <h3>Constitution de groupes de travail</h3>
             <p class="card-desc">
-              Détermine automatiquement les créneaux communs entre plusieurs étudiants afin de réunir le maximum de participants.
+              Forme automatiquement des groupes équilibrés selon les niveaux, compétences et objectifs des étudiants.
             </p>
           </div>
-          <div>
-            <div class="card-algo">Optimisation sous contraintes</div>
-            <div class="card-author">Membre 4</div>
-          </div>
+          <div class="card-algo">Algorithme de répartition multicritère</div>
         </article>
 
         <article class="card">
           <div>
-            <div class="card-version">v0.1.0 · R2</div>
-            <h3>Détection des questions similaires</h3>
+            <div class="card-version">v0.2.0</div>
+            <h3>Évaluation de la gravité des blocages</h3>
             <p class="card-desc">
-              Identifie si une question pédagogique a déjà été posée sur la plateforme afin d'éviter les doublons et d'accélérer les réponses.
+              Détermine les blocages universitaires prioritaires selon leur durée, leur fréquence et le nombre d'étudiants concernés.
             </p>
           </div>
+          <div class="card-algo">Système de scoring</div>
+        </article>
+
+        <article class="card">
           <div>
-            <div class="card-algo">Similarité textuelle, TF-IDF</div>
-            <div class="card-author">Membre 5</div>
+            <div class="card-version">v1.0.0</div>
+            <h3>Planification intelligente des révisions</h3>
+            <p class="card-desc">
+              Organise automatiquement les séances de révision selon les échéances d'examens, les difficultés et le temps disponible.
+            </p>
           </div>
+          <div class="card-algo">Algorithme d'ordonnancement</div>
         </article>
       </div>
     </section>
@@ -377,7 +367,7 @@
 
     <section id="equipe">
       <h2>Équipe</h2>
-      <p class="team-note">Équipe M1 MIAGE Apprentissage — 5 développeurs répartis sur 3 livraisons (15 fonctionnalités).</p>
+      <p class="team-note">Équipe M1 MIAGE Apprentissage — 5 développeurs répartis sur 3 livraisons (15 fonctionnalités au total).</p>
       <ul class="team-list">
         <li>Daniel Badoyan</li>
         <li>Membre 2</li>
