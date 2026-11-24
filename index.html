@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MIAGE Connect — Projet M1 MIAGE Apprentissage</title>
+  <style>
+    :root {
+      --bg-page: #0f1017;
+      --bg-hero: #161722;
+      --bg-card: #14151f;
+      --border-subtle: #252738;
+      --text-main: #f3f4f8;
+      --text-secondary: #a8adbf;
+      --text-muted: #6e7387;
+      --accent: #a796ff;
+      --accent-btn: #9d8df1;
+      --accent-btn-hover: #b2a4f8;
+      --btn-secondary-bg: #232436;
+      --btn-secondary-hover: #2d2f45;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, Helvetica, Arial, sans-serif;
+      background-color: var(--bg-page);
+      color: var(--text-main);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Hero */
+    .hero {
+      background: linear-gradient(180deg, #171825 0%, #12131c 100%);
+      border-bottom: 1px solid var(--border-subtle);
+      padding: 64px 0 56px;
+    }
+
+    .eyebrow {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 12px;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: #ffffff;
+      line-height: 1.1;
+    }
+
+    .accent-bar {
+      width: 48px;
+      height: 4px;
+      background-color: var(--accent-btn);
+      border-radius: 2px;
+      margin: 18px 0 24px;
+    }
+
+    .hero-subtitle {
+      max-width: 620px;
+      font-size: 1.05rem;
+      color: var(--text-secondary);
+      margin-bottom: 28px;
+    }
+
+    .btn-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      padding: 10px 18px;
+      border-radius: 6px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background-color 0.2s ease, transform 0.1s ease;
+    }
+
+    .btn-primary {
+      background-color: var(--accent-btn);
+      color: #12131c;
+    }
+
+    .btn-primary:hover {
+      background-color: var(--accent-btn-hover);
+    }
+
+    .btn-secondary {
+      background-color: var(--btn-secondary-bg);
+      color: var(--accent);
+      border: 1px solid #30324a;
+    }
+
+    .btn-secondary:hover {
+      background-color: var(--btn-secondary-hover);
+    }
+
+    /* Sections */
+    main {
+      padding: 48px 0 64px;
+    }
+
+    section {
+      margin-bottom: 56px;
+    }
+
+    h2 {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 16px;
+    }
+
+    p {
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+    }
+
+    p strong {
+      color: var(--text-main);
+      font-weight: 600;
+    }
+
+    /* Grille de fonctionnalités */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 20px;
+    }
+
+    .card {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 10px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .card-version {
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+
+    .card h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 10px;
+    }
+
+    .card-desc {
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+      margin-bottom: 16px;
+      line-height: 1.5;
+    }
+
+    .card-algo {
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--accent);
+      margin-bottom: 10px;
+    }
+
+    .card-author {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    /* Équipe */
+    .team-note {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+    }
+
+    .team-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      list-style: none;
+      font-size: 0.95rem;
+      color: var(--text-main);
+      font-weight: 500;
+    }
+
+    /* Part IA / part humaine */
+    .ia-chart-box {
+      margin-top: 20px;
+      background-color: #ffffff;
+      border-radius: 10px;
+      padding: 24px;
+      text-align: center;
+      color: #333;
+    }
+
+    .ia-chart-box img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+    }
+
+    .ia-placeholder {
+      padding: 48px 16px;
+      border: 2px dashed #d1d5db;
+      border-radius: 8px;
+      color: #6b7280;
+      font-size: 0.9rem;
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--border-subtle);
+      padding: 28px 0 40px;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    footer a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 820px) {
+      .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 560px) {
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+      .features-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="hero">
+    <div class="container">
+      <div class="eyebrow">Projet M1 MIAGE Apprentissage · Équipe MIAGE Connect</div>
+      <h1>MIAGE Connect</h1>
+      <div class="accent-bar"></div>
+      <p class="hero-subtitle">
+        La plateforme collaborative destinée aux étudiants de L3, M1 et M2 MIAGE : faciliter l'entraide, partager ses connaissances et ne plus rester bloqué seul face à une difficulté universitaire.
+      </p>
+      <div class="btn-group">
+        <a href="dossier.pdf" class="btn btn-primary">Dossier de projet (PDF)</a>
+        <a href="https://github.com/votre-org/miage-connect" class="btn btn-secondary">Code source</a>
+        <a href="https://github.com/votre-org/miage-connect/releases" class="btn btn-secondary">Versions</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="projet">
+      <h2>Le projet</h2>
+      <p>
+        Lorsqu'un étudiant rencontre une difficulté pédagogique, la recherche d'aide est souvent dispersée entre les groupes de discussion, les échanges informels et des ressources éparses. MIAGE Connect centralise l'entraide entre promotions (L3, M1, M2 et mentors) et <strong>calcule des mises en relation pertinentes</strong> plutôt que de simplement stocker des annonces : trouver un pair qui maîtrise une notion, former des binômes complémentaires, planifier des séances de révision et éviter les questions en doublon.
+      </p>
+    </section>
+
+    <section id="fonctionnalites">
+      <h2>Fonctionnalités</h2>
+      <div class="features-grid">
+        <article class="card">
+          <div>
+            <div class="card-version">v0.1.0 · R2</div>
+            <h3>Matching intelligent entre étudiants</h3>
+            <p class="card-desc">
+              Trouve les étudiants les plus compatibles selon les matières recherchées, les compétences déclarées et les disponibilités.
+            </p>
+          </div>
+          <div>
+            <div class="card-algo">Matching multicritère</div>
+            <div class="card-author">Daniel Badoyan</div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div>
+            <div class="card-version">v0.1.0 · R2</div>
+            <h3>Recherche d'experts par matière</h3>
+            <p class="card-desc">
+              Identifie les étudiants maîtrisant une matière ou une notion précise à partir de leurs compétences déclarées et de leurs évaluations.
+            </p>
+          </div>
+          <div>
+            <div class="card-algo">Système de scoring</div>
+            <div class="card-author">Membre 2</div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div>
+            <div class="card-version">v0.1.0 · R2</div>
+            <h3>Recommandation de binômes</h3>
+            <p class="card-desc">
+              Propose des binômes de travail complémentaires selon les niveaux académiques et les objectifs pédagogiques de chacun.
+            </p>
+          </div>
+          <div>
+            <div class="card-algo">Similarité et complémentarité</div>
+            <div class="card-author">Membre 3</div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div>
+            <div class="card-version">v0.1.0 · R2</div>
+            <h3>Organisation de séances de révision</h3>
+            <p class="card-desc">
+              Détermine automatiquement les créneaux communs entre plusieurs étudiants afin de réunir le maximum de participants.
+            </p>
+          </div>
+          <div>
+            <div class="card-algo">Optimisation sous contraintes</div>
+            <div class="card-author">Membre 4</div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div>
+            <div class="card-version">v0.1.0 · R2</div>
+            <h3>Détection des questions similaires</h3>
+            <p class="card-desc">
+              Identifie si une question pédagogique a déjà été posée sur la plateforme afin d'éviter les doublons et d'accélérer les réponses.
+            </p>
+          </div>
+          <div>
+            <div class="card-algo">Similarité textuelle, TF-IDF</div>
+            <div class="card-author">Membre 5</div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="architecture">
+      <h2>Architecture</h2>
+      <p>
+        Front web (React) → API REST (Spring Web, documentée avec OpenAPI / Swagger) → back Java / Spring Boot avec couche algorithmique découplée → MySQL via Spring Data JPA / Hibernate. Tests unitaires et d'intégration (JUnit 5), conteneurisation Docker et intégration continue via GitHub Actions.
+      </p>
+    </section>
+
+    <section id="equipe">
+      <h2>Équipe</h2>
+      <p class="team-note">Équipe M1 MIAGE Apprentissage — 5 développeurs répartis sur 3 livraisons (15 fonctionnalités).</p>
+      <ul class="team-list">
+        <li>Daniel Badoyan</li>
+        <li>Membre 2</li>
+        <li>Membre 3</li>
+        <li>Membre 4</li>
+        <li>Membre 5</li>
+      </ul>
+    </section>
+
+    <section id="part-ia">
+      <h2>Part IA / part humaine</h2>
+      <p>
+        Synthèse de toutes les livraisons, par compétence : la part humaine du haut niveau face au plancher que l'équipe se fixe, et la part de l'IA générative du bas niveau face au plafond qu'elle s'autorise. Le détail par feature et la lecture de ce graphe sont dans le dossier.
+      </p>
+      <div class="ia-chart-box">
+        <!-- Remplace le bloc ci-dessous par : <img src="chemin/vers/graphe-ia.png" alt="Synthèse part IA / part humaine"> -->
+        <div class="ia-placeholder">
+          Emplacement du graphique « Part humaine et part IA par compétence » (PNG / SVG)
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      MIAGE Connect · Projet M1 MIAGE Apprentissage ·
+      <a href="https://github.com/votre-org/miage-connect">Dépôt GitHub</a>
+    </div>
+  </footer>
+
+</body>
+</html>
